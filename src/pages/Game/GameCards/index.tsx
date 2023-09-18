@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import GameContext from '../GameContext'
 import { Container, CardItem } from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import ImageItem from '../../../components/ImageItem'
 
 const GameCards: React.FC = () => {
   const {
@@ -73,7 +72,7 @@ const GameCards: React.FC = () => {
               disabled={isPaused || isShowingFrontFace}
               numOfCardsInEachLine={difficulty / 4}
             >
-              <FontAwesomeIcon icon={icon as IconProp} />
+              <ImageItem path={`/assets/${icon}.png`} />
             </CardItem>
           )
         },

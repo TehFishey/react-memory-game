@@ -9,24 +9,6 @@ import {
   faQuestionCircle,
   faTimes,
   faPalette,
-
-  // Icons for the game
-  faPoo,
-  faAnchor,
-  faMoon,
-  faAppleAlt,
-  faBell,
-  faBible,
-  faBomb,
-  faBone,
-  faCar,
-  faCat,
-  faChess,
-  faSkull,
-  faFeatherAlt,
-  faFire,
-  faHeart,
-  faMusic,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -38,22 +20,4 @@ library.add(
   faQuestionCircle,
   faTimes,
   faPalette,
-
-  // Icons for the game
-  faPoo,
-  faAnchor,
-  faMoon,
-  faAppleAlt,
-  faBell,
-  faBible,
-  faBomb,
-  faBone,
-  faCar,
-  faCat,
-  faChess,
-  faSkull,
-  faFeatherAlt,
-  faFire,
-  faHeart,
-  faMusic,
 )

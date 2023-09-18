@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { useArrayShuffle } from '../../hooks'
+import { useImageSets, ImageSetPrefix } from '../../hooks'
 import GameContext from './GameContext'
-import IconList from './IconList'
 
 type ClearGameStateFunction = () => void
 
@@ -16,6 +16,8 @@ export default (): ClearGameStateFunction => {
     onStopTimer,
   } = useContext(GameContext)
 
+  const ImageSet = useImageSets("ADULT")
+
   const onShuffleArray = useArrayShuffle<string>()
 
   const onClearGameState = (): void => {
@@ -25,7 +27,7 @@ export default (): ClearGameStateFunction => {
     setSecondSelectedCard(-1)
     onStopTimer()
 
-    const shuffledArray = onShuffleArray(IconList)
+    const shuffledArray = onShuffleArray(ImageSet)
     let correctLengthArray = shuffledArray.slice(0, difficulty / 2)
     correctLengthArray = correctLengthArray.concat(correctLengthArray)
     const correctLengthSuffledArray = onShuffleArray(correctLengthArray)
