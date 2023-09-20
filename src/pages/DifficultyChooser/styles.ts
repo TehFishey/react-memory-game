@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import DifficultyItem from '../../components/DifficultyItem'
+import ImageChoiceItem from '../../components/ImageChoiceItem'
 
 export const Container = styled.div`
   height: 100%;
@@ -65,6 +66,13 @@ export const SwitchThemesButton = styled.div`
 `
 
 export const Difficulty = styled(DifficultyItem)`
+  width: 25%;
+  margin: 32px 8px;
+  text-align: center;
+  flex: 1;
+`
+
+export const ImageChoice = styled(ImageChoiceItem)`
   width: 25%;
   margin: 32px 8px;
   text-align: center;

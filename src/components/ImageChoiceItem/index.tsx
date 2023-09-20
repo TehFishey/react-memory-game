@@ -1,16 +1,15 @@
 import React from 'react'
 import { ChoiceButton, DificultyName, NumberOfCards } from './styles'
 
-export type DificultyItemProps = {
+export type ImageChoiceItemProps = {
   name: string
-  numOfCards: number
   className?: string
   isSelected?: boolean
   onClick?: () => void
 }
 
-const DificultyItem: React.FC<DificultyItemProps> = (props) => {
-  const { name, numOfCards, className, onClick, isSelected = false } = props
+const ImageChoiceItem: React.FC<ImageChoiceItemProps> = (props) => {
+  const { name, className, onClick, isSelected = false } = props
 
   return (
     <ChoiceButton
@@ -19,9 +18,8 @@ const DificultyItem: React.FC<DificultyItemProps> = (props) => {
       onClick={onClick}
     >
       <DificultyName>{name}</DificultyName>
-      <NumberOfCards>{numOfCards}</NumberOfCards>
     </ChoiceButton>
   )
 }
 
-export default DificultyItem
+export default ImageChoiceItem
