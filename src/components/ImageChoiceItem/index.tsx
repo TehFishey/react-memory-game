@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChoiceButton, DificultyName, NumberOfCards } from './styles'
+import { ChoiceButton, DificultyName } from './styles'
 
 export type ImageChoiceItemProps = {
   name: string

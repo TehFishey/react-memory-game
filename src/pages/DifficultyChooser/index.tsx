@@ -2,10 +2,15 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch } from 'react-redux'
-import { setTheme, setGameConfig } from '../../store/actions'
 import DIFFICULTIES from '../../config/Difficulties'
+import { ImageSetPrefix } from '../../config/ImageSets'
 import { useTypedSelector } from '../../hooks'
 import { ThemeTypes } from '../../types/Theme'
+import {
+  setTheme,
+  setGameDifficulty,
+  toggleGameImageSet,
+} from '../../store/actions'
 import {
   Container,
   MenuContainer,
@@ -18,6 +23,8 @@ import {
   SwitchThemesButton,
   DifficultyLabel,
   Difficulty,
+  ImageChoice,
+  SecretImageChoice,
   PlayButton,
   PlayButtonContainer,
 } from './styles'
@@ -32,8 +39,17 @@ const DifficultyChooser: React.FC = () => {
     ({ GameConfig }) => GameConfig.difficulty,
   )
 
+  const selectedImageSets = useTypedSelector(
+    ({ GameConfig }) => GameConfig.imageSets,
+  )
+
   const onSelectDifficulty = (difficulty: number) => (): void => {
-    const action = setGameConfig({ difficulty })
+    const action = setGameDifficulty(difficulty)
+    dispatch(action)
+  }
+
+  const onSelectImageSet = (imageSet: ImageSetPrefix) => (): void => {
+    const action = toggleGameImageSet(imageSet)
     dispatch(action)
   }
 
@@ -91,6 +107,39 @@ const DifficultyChooser: React.FC = () => {
               numOfCards={DIFFICULTIES.VERY_HARD}
               onClick={onSelectDifficulty(DIFFICULTIES.VERY_HARD)}
               isSelected={selectedDifficulty === DIFFICULTIES.VERY_HARD}
+            />
+          </DifficultyContainer>
+
+          <DifficultyLabelContainer>
+            <DifficultyLabel>
+              <DifficultyLabelTitle>Choose Test Subjects:</DifficultyLabelTitle>
+              <DifficultyLabelSubtitle>
+                Determines what cards will need to be matched
+              </DifficultyLabelSubtitle>
+            </DifficultyLabel>
+          </DifficultyLabelContainer>
+
+          <DifficultyContainer>
+            <ImageChoice
+              name="Capsules"
+              onClick={onSelectImageSet('CAPSULE')}
+              isSelected={selectedImageSets.includes('CAPSULE')}
+            />
+            <ImageChoice
+              name="Juveniles"
+              onClick={onSelectImageSet('CHILD')}
+              isSelected={selectedImageSets.includes('CHILD')}
+            />
+            <ImageChoice
+              name="Adults"
+              onClick={onSelectImageSet('ADULT')}
+              isSelected={selectedImageSets.includes('ADULT')}
+            />
+            <SecretImageChoice
+              className="secret"
+              name="???"
+              onClick={onSelectImageSet('SHEEP')}
+              isSelected={selectedImageSets.includes('SHEEP')}
             />
           </DifficultyContainer>
 

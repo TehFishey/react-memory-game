@@ -16,6 +16,7 @@ const Game: React.FC = () => {
   const [isPaused, setIsPaused] = useState(true)
 
   const { difficulty } = useTypedSelector(({ GameConfig }) => GameConfig)
+  const { imageSets } = useTypedSelector(({ GameConfig }) => GameConfig)
 
   const {
     hoursText,
@@ -30,6 +31,7 @@ const Game: React.FC = () => {
     <GameContext.Provider
       value={{
         difficulty,
+        imageSets,
         isPaused,
         setIsPaused,
         iconList,

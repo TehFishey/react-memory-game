@@ -1,2 +1,2 @@
 export { setTheme } from './ThemeActions'
-export { setGameConfig } from './GameConfigAction'
+export { setGameDifficulty, toggleGameImageSet } from './GameConfigActions'

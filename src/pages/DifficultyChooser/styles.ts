@@ -79,6 +79,13 @@ export const ImageChoice = styled(ImageChoiceItem)`
   flex: 1;
 `
 
+export const SecretImageChoice = styled(ImageChoice)`
+  border: none;
+  opacity: ${({ isSelected }): string => {
+    return isSelected ? `1.0` : `0.2`
+  }};
+`
+
 export const DifficultyContainer = styled.div`
   display: flex;
   justify-content: center;

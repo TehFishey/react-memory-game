@@ -1,5 +1,8 @@
+import { ImageSetPrefix } from "../../config/ImageSets"
+
 export type GameContextValue = {
   difficulty: number
+  imageSets: ImageSetPrefix[]
   isPaused: boolean
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>
   iconList: string[]

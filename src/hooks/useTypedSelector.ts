@@ -1,10 +1,10 @@
 import { useSelector, TypedUseSelectorHook } from 'react-redux'
 import { ThemePayload } from '../types/Theme'
-import { GameConfigPayload } from '../types/GameConfig'
+import { GameConfigState } from '../types/GameConfig'
 
 interface RootState {
   Theme: ThemePayload
-  GameConfig: GameConfigPayload
+  GameConfig: GameConfigState
 }
 
 const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector
