@@ -14,11 +14,13 @@ const Game: React.FC = () => {
   const [isShowingWinModal, setIsShowingWinModal] = useState(false)
   const [isCheckingCards, setIsCheckingCards] = useState(false)
   const [isPaused, setIsPaused] = useState(true)
+  const [score, setScore] = useState(0)
 
   const { difficulty } = useTypedSelector(({ GameConfig }) => GameConfig)
   const { imageSets } = useTypedSelector(({ GameConfig }) => GameConfig)
 
   const {
+    seconds,
     hoursText,
     minutesText,
     secondsText,
@@ -32,6 +34,8 @@ const Game: React.FC = () => {
       value={{
         difficulty,
         imageSets,
+        score,
+        setScore,
         isPaused,
         setIsPaused,
         iconList,
@@ -46,6 +50,7 @@ const Game: React.FC = () => {
         setIsCheckingCards,
         isShowingWinModal,
         setIsShowingWinModal,
+        seconds,
         hoursText,
         minutesText,
         secondsText,

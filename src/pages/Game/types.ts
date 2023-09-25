@@ -3,6 +3,8 @@ import { ImageSetPrefix } from "../../config/ImageSets"
 export type GameContextValue = {
   difficulty: number
   imageSets: ImageSetPrefix[]
+  score: number
+  setScore: React.Dispatch<React.SetStateAction<number>>
   isPaused: boolean
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>
   iconList: string[]
@@ -17,6 +19,7 @@ export type GameContextValue = {
   setIsCheckingCards: React.Dispatch<React.SetStateAction<boolean>>
   isShowingWinModal: boolean
   setIsShowingWinModal: React.Dispatch<React.SetStateAction<boolean>>
+  seconds: number
   hoursText: string
   minutesText: string
   secondsText: string

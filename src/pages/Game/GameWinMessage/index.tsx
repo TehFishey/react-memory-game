@@ -7,7 +7,9 @@ import useCheckGameEnd from '../useCheckGameEnd'
 import GameContext from '../GameContext'
 
 const GameWinMessage: React.FC = () => {
-  const { isShowingWinModal, setIsShowingWinModal } = useContext(GameContext)
+  const { isShowingWinModal, setIsShowingWinModal, score } = useContext(
+    GameContext,
+  )
 
   const onClearGameState = useClearGameState()
   const history = useHistory()
@@ -27,7 +29,7 @@ const GameWinMessage: React.FC = () => {
       isShowing={isShowingWinModal}
       onCloseModal={onPlayAgain}
       title="Congratulations!"
-      message="You proved that your memory is powerful"
+      message={`Your score this round is: ${score}`}
     >
       <SecondaryAction onClick={onGoBack}>Go Back</SecondaryAction>
       <PrimaryAction onClick={onPlayAgain}>Play Again</PrimaryAction>
