@@ -34,7 +34,7 @@ export default (startTimerOnRender = false, initialTime = 0): TimerType => {
     let timer: number | null = null
 
     if (isTimerRunning) {
-      timer = setInterval(() => {
+      timer = window.setInterval(() => {
         setMilliseconds(milliseconds + 100)
       }, 100)
     }

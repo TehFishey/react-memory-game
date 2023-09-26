@@ -16,8 +16,8 @@ type CardItemType = {
 }
 
 export const CardItem = styled(Card)<CardItemType>`
-  min-height: 100px;
-  min-width: 100px;
+  min-height: 140px;
+  min-width: 140px;
   height: 20vh;
   font-size: 8rem;
   flex: 1 0

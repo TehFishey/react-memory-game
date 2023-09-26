@@ -10,7 +10,7 @@ export const Container = styled.div<ImageType>`
   height: 140px;
   position: relative;
   background-image: ${({ path }): string => {
-    return `url(${path})`
+    return `url(${require(`../../assets/${path}`)})`
   }};
   background-repeat: no-repeat;
   background-position: center;

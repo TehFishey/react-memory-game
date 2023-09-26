@@ -43,9 +43,9 @@ const GameCards: React.FC = () => {
         iconFoundListClone.push(firstSelectedCardIcon)
         setIconFoundList(iconFoundListClone)
         onEndCHeckingSelectedCards()
-      }, [1000])
+      }, 1000)
     } else {
-      setTimeout(onEndCHeckingSelectedCards, [1000])
+      setTimeout(onEndCHeckingSelectedCards, 1000)
     }
   }
 
@@ -53,30 +53,28 @@ const GameCards: React.FC = () => {
 
   return (
     <Container>
-      {iconList.map(
-        (icon: string, index: number): React.ReactNode => {
-          const wasNotFound = iconFoundList.indexOf(icon) === -1
-          const isTheFirstSelectedCard = firstSelectedCard === index
-          const isTheSecondSelectedCard = secondSelectedCard === index
-          const onClick = onSelectCard(index)
+      {iconList.map((icon: string, index: number): React.ReactNode => {
+        const wasNotFound = iconFoundList.indexOf(icon) === -1
+        const isTheFirstSelectedCard = firstSelectedCard === index
+        const isTheSecondSelectedCard = secondSelectedCard === index
+        const onClick = onSelectCard(index)
 
-          const isShowingFrontFace =
-            isTheFirstSelectedCard || isTheSecondSelectedCard
+        const isShowingFrontFace =
+          isTheFirstSelectedCard || isTheSecondSelectedCard
 
-          return (
-            <CardItem
-              key={index}
-              onClick={onClick}
-              isVisible={wasNotFound}
-              isShowingFrontFace={isShowingFrontFace}
-              disabled={isPaused || isShowingFrontFace}
-              numOfCardsInEachLine={difficulty / 4}
-            >
-              <ImageItem path={`/assets/${icon}.png`} />
-            </CardItem>
-          )
-        },
-      )}
+        return (
+          <CardItem
+            key={index}
+            onClick={onClick}
+            isVisible={wasNotFound}
+            isShowingFrontFace={isShowingFrontFace}
+            disabled={isPaused || isShowingFrontFace}
+            numOfCardsInEachLine={difficulty / 4}
+          >
+            <ImageItem path={`${icon}.png`} />
+          </CardItem>
+        )
+      })}
     </Container>
   )
 }

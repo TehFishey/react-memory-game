@@ -7,9 +7,8 @@ import useCheckGameEnd from '../useCheckGameEnd'
 import GameContext from '../GameContext'
 
 const GameWinMessage: React.FC = () => {
-  const { isShowingWinModal, setIsShowingWinModal, score } = useContext(
-    GameContext,
-  )
+  const { isShowingWinModal, setIsShowingWinModal, score } =
+    useContext(GameContext)
 
   const onClearGameState = useClearGameState()
   const history = useHistory()
