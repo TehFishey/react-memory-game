@@ -1,20 +1,15 @@
 import styled from 'styled-components'
 
-type ImageType = {
-  path: string
-  scaled: boolean
-}
-
-export const Container = styled.div<ImageType>`
-  width: 140px;
-  height: 140px;
+export const Container = styled.div`
   position: relative;
-  background-image: ${({ path }): string => {
-    return `url(${require(`../../assets/${path}`)})`
-  }};
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: ${({ scaled }): string => {
-    return scaled ? 'contain' : 'auto'
-  }};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+`
+export const Img = styled.img`
+  height: 85%;
+  width: 85%;
+  object-fit: scale-down;
 `

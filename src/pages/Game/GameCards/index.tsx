@@ -69,7 +69,7 @@ const GameCards: React.FC = () => {
             isVisible={wasNotFound}
             isShowingFrontFace={isShowingFrontFace}
             disabled={isPaused || isShowingFrontFace}
-            numOfCardsInEachLine={difficulty / 4}
+            numOfCards={difficulty}
           >
             <ImageItem path={`${icon}.png`} />
           </CardItem>

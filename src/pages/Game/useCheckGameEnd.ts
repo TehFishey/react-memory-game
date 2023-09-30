@@ -13,7 +13,7 @@ export default (): void => {
   } = useContext(GameContext)
 
   const calcScore = (seconds: number, difficulty: number): number => {
-    return 1 + Math.round(-seconds / 15 + difficulty / 8 + 2.5)
+    return 1 + Math.max(0, Math.round(difficulty / 8 - seconds / 15 + 2.5))
   }
 
   useEffect(() => {

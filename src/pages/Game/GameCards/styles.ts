@@ -12,17 +12,24 @@ export const Container = styled.div`
 `
 
 type CardItemType = {
-  numOfCardsInEachLine: number
+  numOfCards: number
 }
 
 export const CardItem = styled(Card)<CardItemType>`
-  min-height: 140px;
-  min-width: 140px;
-  height: 20vh;
-  font-size: 8rem;
-  flex: 1 0
-    calc(
-      (100% / ${({ numOfCardsInEachLine }): number => numOfCardsInEachLine}) -
-        16px
-    );
+  @media (max-width: 600px) {
+    flex: 1 0
+      calc((100% / ${({ numOfCards }): number => numOfCards / 4}) - 16px);
+    min-height: 55px;
+    min-width: 55px;
+    height: 10vh;
+    font-size: 3rem;
+  }
+  @media (min-width: 601px) {
+    flex: 1 0
+      calc((100% / ${({ numOfCards }): number => numOfCards / 4}) - 16px);
+    min-height: 100px;
+    min-width: 100px;
+    height: 20vh;
+    font-size: 8rem;
+  }
 `

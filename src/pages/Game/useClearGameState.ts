@@ -15,6 +15,7 @@ export default (): ClearGameStateFunction => {
     difficulty,
     imageSets,
     onStopTimer,
+    onStartTimer,
   } = useContext(GameContext)
 
   const ImageSet = useImageSets(imageSets)
@@ -23,10 +24,11 @@ export default (): ClearGameStateFunction => {
 
   const onClearGameState = (): void => {
     setIconFoundList([])
-    setIsPaused(true)
     setFirstSelectedCard(-1)
     setSecondSelectedCard(-1)
     onStopTimer()
+    onStartTimer()
+    setIsPaused(false)
 
     const shuffledArray = onShuffleArray(ImageSet)
     let correctLengthArray = shuffledArray.slice(0, difficulty / 2)

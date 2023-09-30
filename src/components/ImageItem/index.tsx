@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from './styles'
+import { Container, Img } from './styles'
 
 export type ImageItemProps = {
   path: string
@@ -7,10 +7,12 @@ export type ImageItemProps = {
 
 const ImageItem: React.FC<ImageItemProps> = (props) => {
   const { path } = props
-  const img = new Image()
-  img.src = require(`../../assets/${path}`)
 
-  return <Container path={path} scaled={img.height > 140 || img.width > 140} />
+  return (
+    <Container>
+      <Img src={require(`../../assets/${path}`)} />
+    </Container>
+  )
 }
 
 export default ImageItem
