@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import GameContext from '../GameContext'
-import { Container, CardItem } from './styles'
+import { Container, CardItem, FlexElement } from './styles'
 import ImageItem from '../../../components/ImageItem'
 
 const GameCards: React.FC = () => {
@@ -49,31 +49,43 @@ const GameCards: React.FC = () => {
     }
   }
 
+  const buildFlexElement = (start: number): React.ReactNode => {
+    const flexIcons = iconList.slice(start, start + difficulty / 4)
+    return (
+      <FlexElement>
+        {flexIcons.map((icon: string, index: number): React.ReactNode => {
+          const adjustedIndex = index + start
+          const wasNotFound = iconFoundList.indexOf(icon) === -1
+          const isTheFirstSelectedCard = firstSelectedCard === adjustedIndex
+          const isTheSecondSelectedCard = secondSelectedCard === adjustedIndex
+          const onClick = onSelectCard(adjustedIndex)
+
+          const isShowingFrontFace =
+            isTheFirstSelectedCard || isTheSecondSelectedCard
+
+          return (
+            <CardItem
+              key={adjustedIndex}
+              onClick={onClick}
+              isVisible={wasNotFound}
+              isShowingFrontFace={isShowingFrontFace}
+              disabled={isPaused || isShowingFrontFace}
+              numOfCards={difficulty}
+            >
+              <ImageItem path={`${icon}.png`} />
+            </CardItem>
+          )
+        })}
+      </FlexElement>
+    )
+  }
+
   useEffect(onCheckIfFoundIcon, [secondSelectedCard])
 
   return (
     <Container>
-      {iconList.map((icon: string, index: number): React.ReactNode => {
-        const wasNotFound = iconFoundList.indexOf(icon) === -1
-        const isTheFirstSelectedCard = firstSelectedCard === index
-        const isTheSecondSelectedCard = secondSelectedCard === index
-        const onClick = onSelectCard(index)
-
-        const isShowingFrontFace =
-          isTheFirstSelectedCard || isTheSecondSelectedCard
-
-        return (
-          <CardItem
-            key={index}
-            onClick={onClick}
-            isVisible={wasNotFound}
-            isShowingFrontFace={isShowingFrontFace}
-            disabled={isPaused || isShowingFrontFace}
-            numOfCards={difficulty}
-          >
-            <ImageItem path={`${icon}.png`} />
-          </CardItem>
-        )
+      {[0, 1, 2, 3].map((item: number): React.ReactNode => {
+        return buildFlexElement((difficulty / 4) * item)
       })}
     </Container>
   )

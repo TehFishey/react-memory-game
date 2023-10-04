@@ -3,7 +3,6 @@ import DifficultyItem from '../../components/DifficultyItem'
 import ImageChoiceItem from '../../components/ImageChoiceItem'
 
 export const Container = styled.div`
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +12,7 @@ export const Container = styled.div`
 export const MenuContainer = styled.div`
   border: 2px solid ${({ theme }): string => theme.primaryText};
   border-radius: 5px;
-  width: 50%;
-  min-width: 400px;
+  width: clamp(50%, 500px, 100%);
   overflow: hidden;
 `
 
@@ -66,17 +64,31 @@ export const SwitchThemesButton = styled.div`
 `
 
 export const Difficulty = styled(DifficultyItem)`
-  width: 25%;
-  margin: 32px 8px;
   text-align: center;
   flex: 1;
+
+  @media (max-width: 600px) {
+    margin: 8px 8px;
+    width: 100%;
+  }
+  @media (min-width: 601px) {
+    margin: 32px 8px;
+    width: 25%;
+  }
 `
 
 export const ImageChoice = styled(ImageChoiceItem)`
-  width: 25%;
-  margin: 32px 8px;
   text-align: center;
   flex: 1;
+
+  @media (max-width: 600px) {
+    margin: 8px 8px;
+    width: 100%;
+  }
+  @media (min-width: 601px) {
+    margin: 32px 8px;
+    width: 25%;
+  }
 `
 
 export const SecretImageChoice = styled(ImageChoice)`
@@ -89,8 +101,14 @@ export const SecretImageChoice = styled(ImageChoice)`
 export const DifficultyContainer = styled.div`
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   margin-top: 24px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+  @media (min-width: 601px) {
+    flex-wrap: wrap;
+  }
 `
 
 export const PlayButtonContainer = styled.div`
