@@ -6,6 +6,7 @@ export default (): void => {
     iconFoundList,
     difficulty,
     seconds,
+    matchAttempts,
     setIsShowingWinModal,
     setIsPaused,
     onPauseTimer,
@@ -13,7 +14,13 @@ export default (): void => {
   } = useContext(GameContext)
 
   const calcScore = (seconds: number, difficulty: number): number => {
-    return 1 + Math.max(0, Math.round(difficulty / 8 - seconds / 15 + 2.5))
+    return Math.round(
+      (1 +
+        difficulty / 4 +
+        Math.max(0, ((difficulty / 10) * 45 - seconds) / 15) +
+        Math.max(0, (difficulty * 1.5 - matchAttempts) / 4)) *
+        500,
+    )
   }
 
   useEffect(() => {

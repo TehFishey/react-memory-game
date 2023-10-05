@@ -16,6 +16,8 @@ export default (): ClearGameStateFunction => {
     imageSets,
     onStopTimer,
     onStartTimer,
+    setMatchAttempts,
+    setScore,
   } = useContext(GameContext)
 
   const ImageSet = useImageSets(imageSets)
@@ -26,6 +28,8 @@ export default (): ClearGameStateFunction => {
     setIconFoundList([])
     setFirstSelectedCard(-1)
     setSecondSelectedCard(-1)
+    setMatchAttempts(0)
+    setScore(0)
     onStopTimer()
     onStartTimer()
     setIsPaused(false)

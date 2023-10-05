@@ -41,7 +41,7 @@ const GameControlBar: React.FC = () => {
 
   const onReturnToMenu = (): void => {
     const playerWantsToLeave = window.confirm(
-      'Do you want to leave this awesome game?',
+      'Are you sure you want to leave this game unfinished?',
     )
 
     if (playerWantsToLeave) history.goBack()

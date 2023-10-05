@@ -16,6 +16,8 @@ const GameCards: React.FC = () => {
     isCheckingCards,
     setIsCheckingCards,
     difficulty,
+    matchAttempts,
+    setMatchAttempts,
   } = useContext(GameContext)
 
   const onSelectCard = (index: number) => (): void => {
@@ -36,6 +38,7 @@ const GameCards: React.FC = () => {
     setIsCheckingCards(true)
     const firstSelectedCardIcon = iconList[firstSelectedCard]
     const secondSelectedCardIcon = iconList[secondSelectedCard]
+    setMatchAttempts(matchAttempts + 1)
 
     if (firstSelectedCardIcon === secondSelectedCardIcon) {
       setTimeout(() => {

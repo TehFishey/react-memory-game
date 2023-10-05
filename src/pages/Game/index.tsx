@@ -15,6 +15,7 @@ const Game: React.FC = () => {
   const [isCheckingCards, setIsCheckingCards] = useState(false)
   const [isPaused, setIsPaused] = useState(true)
   const [score, setScore] = useState(0)
+  const [matchAttempts, setMatchAttempts] = useState(0)
 
   const { difficulty } = useTypedSelector(({ GameConfig }) => GameConfig)
   const { imageSets } = useTypedSelector(({ GameConfig }) => GameConfig)
@@ -36,6 +37,8 @@ const Game: React.FC = () => {
         imageSets,
         score,
         setScore,
+        matchAttempts,
+        setMatchAttempts,
         isPaused,
         setIsPaused,
         iconList,

@@ -14,7 +14,7 @@ type AlertModalProps = {
   isShowing?: boolean
   onCloseModal?: () => void
   title?: string
-  message?: string
+  message?: string[]
   children?: React.ReactNode
 }
 
@@ -23,7 +23,7 @@ const AlertModal: React.FC<AlertModalProps> = (props) => {
     isShowing = false,
     onCloseModal,
     title = '',
-    message = '',
+    message = [],
     children,
   } = props
 
@@ -37,7 +37,11 @@ const AlertModal: React.FC<AlertModalProps> = (props) => {
           </CloseButton>
         </TitleContainer>
 
-        <Message>{message}</Message>
+        <Message>
+          {message.map((item: string, index: number) => (
+            <div key={index}>{item}</div>
+          ))}
+        </Message>
 
         <Footer>{children}</Footer>
       </Dialog>

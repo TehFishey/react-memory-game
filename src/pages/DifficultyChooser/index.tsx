@@ -67,7 +67,7 @@ const DifficultyChooser: React.FC = () => {
   return (
     <Container>
       <MenuContainer>
-        <AppName>React Memory Game</AppName>
+        <AppName>Match ’Em Mayhem</AppName>
 
         <MenuContent>
           <DifficultyLabelContainer>

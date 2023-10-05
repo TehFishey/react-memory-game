@@ -5,6 +5,8 @@ export type GameContextValue = {
   imageSets: ImageSetPrefix[]
   score: number
   setScore: React.Dispatch<React.SetStateAction<number>>
+  matchAttempts: number
+  setMatchAttempts: React.Dispatch<React.SetStateAction<number>>
   isPaused: boolean
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>
   iconList: string[]
