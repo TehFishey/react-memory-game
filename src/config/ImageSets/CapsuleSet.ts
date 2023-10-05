@@ -1,3 +1,5 @@
+// capsule44 removed for colorblindness reasons
+// (similarities to capsule41)
 export default [
   'capsule1',
   'capsule2',
@@ -42,7 +44,6 @@ export default [
   'capsule41',
   'capsule42',
   'capsule43',
-  'capsule44',
   'capsule45',
   'capsule46',
   'capsule47',

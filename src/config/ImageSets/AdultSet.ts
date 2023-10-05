@@ -1,3 +1,5 @@
+// adult42 removed for colorblindness reasons
+// (similarities to adult34)
 export default [
   'adult1',
   'adult2',
@@ -40,7 +42,6 @@ export default [
   'adult39',
   'adult40',
   'adult41',
-  'adult42',
   'adult43',
   'adult44',
   'adult45',
