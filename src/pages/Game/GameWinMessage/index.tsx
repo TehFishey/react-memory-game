@@ -42,7 +42,7 @@ const GameWinMessage: React.FC = () => {
         `Difficulty Bonus (${difficulty} Cards): ${Math.round(
           (difficulty / 4) * 500,
         )}`,
-        `Time Bonus (${hoursText}:${minutesText}:${secondsText}): ${Math.round(
+        `Time Bonus (${hoursText}:${minutesText}:${secondsText}) ((${seconds}s)): ${Math.round(
           Math.max(0, ((difficulty / 10) * 45 - seconds) / 15) * 500,
         )}`,
         `Accuracy Bonus: (${matchAttempts} Match Attempts): ${Math.round(
