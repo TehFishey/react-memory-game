@@ -38,17 +38,10 @@ const GameWinMessage: React.FC = () => {
       onCloseModal={onPlayAgain}
       title="Success!"
       message={[
-        `Base Score: 500`,
-        `Difficulty Bonus (${difficulty} Cards): ${Math.round(
-          (difficulty / 4) * 500,
-        )}`,
-        `Time Bonus (${hoursText}:${minutesText}:${secondsText}) ((${seconds}s)): ${Math.round(
-          Math.max(0, ((difficulty / 10) * 45 - seconds) / 15) * 500,
-        )}`,
-        `Accuracy Bonus: (${matchAttempts} Match Attempts): ${Math.round(
-          Math.max(0, (difficulty * 1.5 - matchAttempts) / 4) * 500,
-        )}`,
-        `Total Score: ${score}`,
+        `Difficulty: ${difficulty} Cards`,
+        `Time: ${hoursText}:${minutesText}:${secondsText}`,
+        `Accuracy: ${difficulty / 2} out of ${matchAttempts} Matches`,
+        `Score: ${score}`,
       ]}
     >
       <SecondaryAction onClick={onGoBack}>Go Back</SecondaryAction>

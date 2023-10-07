@@ -33,17 +33,11 @@ export default (): void => {
       const score = calcScore(seconds, difficulty)
 
       setScore(score)
-      useFetch(ajaxConfig.url, { time: seconds, score: score })
+      useFetch(ajaxConfig.url + ajaxConfig.path, {
+        time: seconds,
+        score: score,
+      })
       setIsShowingWinModal(true)
     }
-  }, [
-    difficulty,
-    seconds,
-    matchAttempts,
-    iconFoundList.length,
-    onPauseTimer,
-    setScore,
-    setIsPaused,
-    setIsShowingWinModal,
-  ])
+  }, [iconFoundList.length])
 }

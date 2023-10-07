@@ -5,6 +5,13 @@ import App from './pages/App'
 import store from './store'
 import './config/IconLibrary'
 
+if (process.env.NODE_ENV === 'development') {
+  import('./mocks/browser').then((module) => {
+    const { worker } = module
+    worker.start({ onUnhandledRequest: 'bypass' })
+  })
+}
+
 const Redux: React.FC = () => {
   return (
     <Provider store={store}>
@@ -13,4 +20,4 @@ const Redux: React.FC = () => {
   )
 }
 
-ReactDOM.render(<Redux />, document.getElementById('root'))
+ReactDOM.render(<Redux />, document.getElementById('halloween2023Game'))

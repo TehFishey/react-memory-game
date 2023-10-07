@@ -11,6 +11,8 @@ export const useFetch = (url: string, body: Body): void => {
     },
     body: JSON.stringify(body),
   })
-    .then((res) => res.json())
+    .then((res) => {
+      return res.json()
+    })
     .catch((err) => console.log(err))
 }

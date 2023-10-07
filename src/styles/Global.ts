@@ -26,7 +26,7 @@ export default createGlobalStyle`
     ${fontStyle}
   }
 
-  html, body, #root {
+  html, body, #halloween2023Game {
     height: 100%;
   }
 
