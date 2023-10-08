@@ -3,10 +3,6 @@ import styled, { css, FlattenSimpleInterpolation } from 'styled-components'
 const ButtonHeight = 42
 
 export const Container = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   display: flex;
   align-items: center;
   height: 64px;
@@ -34,7 +30,7 @@ export const BackButton = styled.div`
   border: 1px solid ${({ theme }): string => theme.secondaryText};
   min-height: ${ButtonHeight}px;
   min-width: ${ButtonHeight}px;
-  font-size: 2rem;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 

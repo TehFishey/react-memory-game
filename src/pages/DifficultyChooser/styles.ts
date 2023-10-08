@@ -12,18 +12,21 @@ export const Container = styled.div`
 export const MenuContainer = styled.div`
   border: 2px solid ${({ theme }): string => theme.primaryText};
   border-radius: 5px;
-  width: clamp(50%, 500px, 100%);
+  width: clamp(80%, 500px, 100%);
   overflow: hidden;
 `
 
 export const AppName = styled.h1`
-  font-size: 2.8rem;
+  font-size: 1.75rem;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
   background: ${({ theme }): string => theme.primaryText};
   color: ${({ theme }): string => theme.background};
   padding: 8px 0;
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0;
 `
 
 export const MenuContent = styled.div`
@@ -42,7 +45,7 @@ export const DifficultyLabel = styled.div`
 export const DifficultyLabelTitle = styled.div`
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.25rem;
 `
 
 export const DifficultyLabelSubtitle = styled.div``
@@ -51,9 +54,9 @@ export const SwitchThemesButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  width: 5rem;
-  height: 5rem;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 100%;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -118,7 +121,7 @@ export const PlayButtonContainer = styled.div`
 `
 
 export const PlayButton = styled.div`
-  font-size: 2.4rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
   background: ${({ theme }): string => theme.accent};

@@ -2,7 +2,7 @@ import React from 'react'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import DificultyChooser from '../DifficultyChooser'
-import GlobalStyles from '../../styles/Global'
+import { Wrapper } from '../../styles/Wrapper'
 import { useTypedSelector } from '../../hooks'
 import THEME_COLORS from '../../styles/Theme'
 import { ThemeTypes } from '../../types/Theme'
@@ -14,13 +14,14 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={themeColors}>
-      <GlobalStyles />
-      <HashRouter basename={process.env.PUBLIC_URL}>
-        <Switch>
-          <Route exact path="/" component={DificultyChooser} />
-          <Route exact path="/game" component={Game} />
-        </Switch>
-      </HashRouter>
+      <Wrapper>
+        <HashRouter basename={process.env.PUBLIC_URL}>
+          <Switch>
+            <Route exact path="/" component={DificultyChooser} />
+            <Route exact path="/game" component={Game} />
+          </Switch>
+        </HashRouter>
+      </Wrapper>
     </ThemeProvider>
   )
 }

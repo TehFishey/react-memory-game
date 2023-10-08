@@ -9,6 +9,9 @@ export const Container = styled.div`
   flex-wrap: none;
   width: 100%;
   height: calc(100% - 64px);
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0;
 
   @media (max-width: 600px) {
     flex-direction: row;
@@ -26,10 +29,13 @@ type CardItemType = {
 }
 
 export const FlexElement = styled.div`
-  display: flex;0
+  display: flex;
   justify-content: safe center;
   align-content: safe center;
   align-items: safe center;
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0;
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -47,6 +53,8 @@ export const FlexElement = styled.div`
 
 export const CardItem = styled(Card)<CardItemType>`
   font-size: clamp(8vmin, 10vmin, 10vmin);
+  box-sizing: border-box;
+
   @media (max-width: 600px) {
     width: calc(100% - 8px);
     height: calc((100% / ${({ numOfCards }): number => numOfCards / 4}) - 8px);

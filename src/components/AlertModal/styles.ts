@@ -30,15 +30,15 @@ export const TitleContainer = styled.div`
 `
 
 export const Title = styled.div`
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-transform: uppercase;
   flex: 1;
 `
 
 export const CloseButton = styled.div`
-  width: 4rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
