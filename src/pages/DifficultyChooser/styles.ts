@@ -10,6 +10,7 @@ export const Container = styled.div`
 `
 
 export const MenuContainer = styled.div`
+  background: ${({ theme }): string => theme.background};
   border: 2px solid ${({ theme }): string => theme.primaryText};
   border-radius: 5px;
   width: clamp(80%, 500px, 100%);
@@ -72,7 +73,7 @@ export const Difficulty = styled(DifficultyItem)`
 
   @media (max-width: 600px) {
     margin: 8px 8px;
-    width: 100%;
+    width: auto;
   }
   @media (min-width: 601px) {
     margin: 32px 8px;
@@ -86,7 +87,7 @@ export const ImageChoice = styled(ImageChoiceItem)`
 
   @media (max-width: 600px) {
     margin: 8px 8px;
-    width: 100%;
+    width: auto;
   }
   @media (min-width: 601px) {
     margin: 32px 8px;

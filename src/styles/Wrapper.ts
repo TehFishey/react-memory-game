@@ -11,7 +11,6 @@ const fontStyle = css`
 export const Wrapper = styled.div`
   height: 100%;
   font-family: 'Noto Sans', monospace;
-  background: ${({ theme }): string => theme.background};
   ${fontStyle}
 
   textarea, input, button {

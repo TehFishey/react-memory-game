@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div<{ isShowing?: boolean }>`
   position: fixed;
   top: 0;
+  left: 0;
   height: 100vh;
   width: 100vw;
   z-index: 999;
