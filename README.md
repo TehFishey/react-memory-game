@@ -1,32 +1,14 @@
 # :flower_playing_cards:  React Memory Game
 
-This is a memory game created with React, TypeScript and Styled Components.
+This is a modified version of [Luan Eduardo da Costa](https://www.linkedin.com/in/luaneducosta/)'s react-memory-game, intended for deployment by [The Final Outpost](https://finaloutpost.net/) as a holiday minigame. Changes from the original project include general versioning updates/cleanups, the addition of configurable & adjustable image displays for card components, and numerous styling changes intended to make the UI more responsive. These modifications were completed by [Michael D'Attilo](https://github.com/TehFishey) in early October 2023.
 
-## :heart: Motivation
+## :bulb: Deployment Information
 
-I want to learn TypeScript to understand more about the types used in public libraries and frameworks such as React, React Native and Axios. I also want to create my own libraries to contribute with the awesome JavaScript community.
+- Project is built against node 20.6.1.
+- Project uses css class 'halloween2023Game' as its root component.
 
-A lot of companies are using TypeScript to build large and scalable projects, because it improves the intellisense, the documentation and prevent errors when the customers are using the software.
+## :heart: Thanks
 
-I strongly believe that TypeScipt is something that I need to learn in order to became a better software developer.
-
-## :bulb: TODO
-
-- [x] Create project with create-react-app
-- [x] Create folder structure
-- [x] Config Eslint, Prettier and TypeSctipt
-- [x] Create Global Styles
-- [x] Install and create store with redux and react-redux
-- [x] Setup styled-components theme provider and theme reducer
-- [x] Create game menu to choose dificulty
-- [x] Create control buttons (play, pause and restart)
-- [x] Create game card and main layout
-- [x] Create timer
-- [x] Create the game logic
-- [x] Create the win message modal
-- [x] Make the game responsive
-- [x] Switch themes
-
-## :man: Author
-
-Luan Eduardo da Costa | [Follow me on Linkedin](https://www.linkedin.com/in/luaneducosta/)
+- Trememndous thanks to [Luan Eduardo da Costa](https://www.linkedin.com/in/luaneducosta/) for the creation of his original memory game (plus minor apologies for butchering his code somewhat.)
+- Thanks to '[Shark](https://finaloutpost.net/visit/shark)' and the TFO community staff for feedback and testing during development.
+- Thanks to 'Corteo' and the TFO development team for their assistance and patience during integration/testing.
