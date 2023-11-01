@@ -9,7 +9,7 @@ const fontStyle = css`
   -moz-osx-font-smoothing: grayscale;
 `
 export const Wrapper = styled.div`
-  height: 100%;
+  height: clamp(70vh, fit-content, 120vh);
   font-family: 'Noto Sans', monospace;
   ${fontStyle}
 

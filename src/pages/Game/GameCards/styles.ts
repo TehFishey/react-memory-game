@@ -59,10 +59,10 @@ export const CardItem = styled(Card)<CardItemType>`
 
   @media (max-width: 600px) {
     width: calc(100% - 8px);
-    height: calc((100% / ${({ numOfCards }): number => numOfCards / 4}) - 8px);
+    height: calc((70vh / ${({ numOfCards }): number => numOfCards / 4}) - 8px);
   }
   @media (min-width: 601px) {
     width: calc((100% / ${({ numOfCards }): number => numOfCards / 4}) - 16px);
-    height: calc(100% - 16px);
+    height: 16vh;
   }
 `

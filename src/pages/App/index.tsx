@@ -10,7 +10,7 @@ import Game from '../Game'
 
 const App: React.FC = () => {
   const themeType = useTypedSelector(({ Theme }) => Theme.type)
-  const themeColors = THEME_COLORS[themeType || ThemeTypes.dark]
+  const themeColors = THEME_COLORS[themeType || ThemeTypes.light]
 
   return (
     <ThemeProvider theme={themeColors}>

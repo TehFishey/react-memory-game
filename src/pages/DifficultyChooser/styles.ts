@@ -18,7 +18,7 @@ export const MenuContainer = styled.div`
 `
 
 export const AppName = styled.h1`
-  font-size: 1.75rem;
+  font-size: 1.75em;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
@@ -31,7 +31,14 @@ export const AppName = styled.h1`
 `
 
 export const MenuContent = styled.div`
-  padding: 32px 24px;
+  @media (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 12px 12px;
+  }
+  @media (min-width: 601px) {
+    font-size: 1rem;
+    padding: 32px 24px;
+  }
 `
 export const DifficultyLabelContainer = styled.div`
   display: flex;
@@ -46,7 +53,7 @@ export const DifficultyLabel = styled.div`
 export const DifficultyLabelTitle = styled.div`
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 1.25rem;
+  font-size: 1.25em;
 `
 
 export const DifficultyLabelSubtitle = styled.div``
@@ -55,9 +62,9 @@ export const SwitchThemesButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  font-size: 1.5em;
+  width: 3em;
+  height: 3em;
   border-radius: 100%;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -105,12 +112,17 @@ export const SecretImageChoice = styled(ImageChoice)`
 export const DifficultyContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 24px;
 
   @media (max-width: 600px) {
+    margin-top: 10px;
     flex-direction: column;
+    * {
+      font-size: 1em;
+      flex-direction: row;
+    }
   }
   @media (min-width: 601px) {
+    margin-top: 24px;
     flex-wrap: wrap;
   }
 `
@@ -122,12 +134,10 @@ export const PlayButtonContainer = styled.div`
 `
 
 export const PlayButton = styled.div`
-  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: bold;
   background: ${({ theme }): string => theme.accent};
   color: white;
-  padding: 20px 16px;
   text-align: center;
   border-radius: 5px;
   margin: 0 8px 0 auto;
@@ -137,5 +147,14 @@ export const PlayButton = styled.div`
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2);
   &:hover {
     transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1em;
+    padding: 8px 6px;
+  }
+  @media (min-width: 601px) {
+    font-size: 1.5em;
+    padding: 20px 16px;
   }
 `
